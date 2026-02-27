@@ -1,4 +1,4 @@
-# OpenClaw clawMail Skill
+# OpenClaw claw-mail Skill
 
 A multi-account email skill for [OpenClaw](https://openclaw.ai) that manages email across multiple IMAP/SMTP accounts. Retrieves, reads, searches, processes, composes, sends, replies, forwards, and organizes emails with secure credential storage, IMAP Outbox delivery, TLS 1.2+ enforcement, OAuth2 support, and per-account rules.
 
