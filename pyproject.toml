@@ -1,0 +1,29 @@
+[project]
+name = "openclaw-claw-mail-skill"
+version = "0.7.0"
+description = "OpenClaw clawMail skill - multi-account email management with IMAP/SMTP, secure credential storage, IMAP Outbox delivery, TLS 1.2+, and rule-based processing"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.2",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
