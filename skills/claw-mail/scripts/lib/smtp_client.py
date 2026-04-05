@@ -8,7 +8,7 @@ import smtplib
 import socket
 import ssl
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
@@ -149,7 +149,7 @@ class SMTPClient:
                     if message.sender and "@" in str(message.sender)
                     else "localhost"
                 )
-            msg_id = f"{int(datetime.utcnow().timestamp() * 1000)}.{uuid.uuid4().hex}@{hostname}"
+            msg_id = f"{int(datetime.now(timezone.utc).timestamp() * 1000)}.{uuid.uuid4().hex}@{hostname}"
             message.message_id = f"<{msg_id}>"
             mime_msg["Message-ID"] = message.message_id
 

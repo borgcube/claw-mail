@@ -31,7 +31,7 @@ import json
 import os
 import sys
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
@@ -57,7 +57,7 @@ def build_vcalendar(
 ) -> str:
     """Build an iCalendar VCALENDAR string for a VEVENT."""
     uid = uid or f"{uuid.uuid4()}@clawMail"
-    now = datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
+    now = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     dtstart = start.strftime("%Y%m%dT%H%M%S")
     dtend = end.strftime("%Y%m%dT%H%M%S")
 
